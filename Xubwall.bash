@@ -21,7 +21,7 @@
 #Change background
 for i in $(xfconf-query -c xfce4-desktop -l | grep "last-image")
 do
-    xfconf-query -c xfce4-desktop -p $i -s /usr/share/backgrounds/wall
+    xfconf-query -c xfce4-desktop -p $i -s usr/share/backgrounds/wall
 done
 
 	echo $pass | su - dcadmin -c "echo $pass | sudo mv  $curdir/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf"
