@@ -1,0 +1,6 @@
+#!/bin/bash
+wget -q https://raw.githubusercontent.com/MNIMadAway/WallpaperXubuntu/main/Xubwall.bash
+wget -q https://raw.githubusercontent.com/MNIMadAway/WallpaperXubuntu/main/lightdm-gtk-greeter.conf
+wget -q https://github.com/MNIMadAway/WallpaperXubuntu/raw/main/wall
+bash Xubwall.bash
+rm start
