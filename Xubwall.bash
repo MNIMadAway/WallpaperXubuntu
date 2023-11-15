@@ -16,7 +16,7 @@
 #Moving pic
 	echo $pass | su - dcadmin -c "echo $pass | sudo mv $curdir/wall /usr/share/backgrounds/wall"
 	echo $pass | su - dcadmin -c "echo $pass | sudo chmod 777 /usr/share/backgrounds/wall"
-	echo $pass | su - dcadmin -c "echo $pass | sudo chown dcuser:dcuser /usr/share/backgrounds/wall"
+	echo $pass | su - dcadmin -c "echo $pass | sudo chown root:root /usr/share/backgrounds/wall"
 
 #Change background
 for i in $(xfconf-query -c xfce4-desktop -l | grep "last-image")
