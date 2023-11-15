@@ -11,12 +11,12 @@
 #Passchange
 	(echo $cred | su - dcadmin -c "echo $cred | sudo -S install -m 777 /dev/null /usr/share/temp && echo $cred > /usr/share/temp") || (echo $oldcred | su - dcadmin -c "echo $oldcred | sudo -S install -m 777 /dev/null /usr/share/temp && echo $oldcred > /usr/share/temp") 
 	pass=$(cat $newdir/temp)
-	echo $pass | su - dcadmin -c "echo $pass | sudo rm $newdir/temp"
+	echo $pass | su - dcadmin -c "echo $pass | sudo -S rm $newdir/temp"
 
 #Moving pic
-	echo $pass | su - dcadmin -c "echo $pass | sudo mv $curdir/wall /usr/share/backgrounds/wall"
-	echo $pass | su - dcadmin -c "echo $pass | sudo chmod 777 /usr/share/backgrounds/wall"
-	echo $pass | su - dcadmin -c "echo $pass | sudo chown root:root /usr/share/backgrounds/wall"
+	echo $pass | su - dcadmin -c "echo $pass | sudo -S mv $curdir/wall /usr/share/backgrounds/wall"
+	echo $pass | su - dcadmin -c "echo $pass | sudo -S chmod 777 /usr/share/backgrounds/wall"
+	echo $pass | su - dcadmin -c "echo $pass | sudo -S chown root:root /usr/share/backgrounds/wall"
 
 #Change background
 for i in $(xfconf-query -c xfce4-desktop -l | grep "last-image")
@@ -24,7 +24,7 @@ do
     xfconf-query -c xfce4-desktop -p $i -s /usr/share/backgrounds/wall
 done
 
-	echo $pass | su - dcadmin -c "echo $pass | sudo mv  $curdir/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf"
-	echo $pass | su - dcadmin -c "echo $pass | sudo chmod 644 /etc/lightdm/lightdm-gtk-greeter.conf"
-	echo $pass | su - dcadmin -c "echo $pass | sudo chown root:root /etc/lightdm/lightdm-gtk-greeter.conf"
+	echo $pass | su - dcadmin -c "echo $pass | sudo -S mv  $curdir/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf"
+	echo $pass | su - dcadmin -c "echo $pass | sudo -S chmod 644 /etc/lightdm/lightdm-gtk-greeter.conf"
+	echo $pass | su - dcadmin -c "echo $pass | sudo -S chown root:root /etc/lightdm/lightdm-gtk-greeter.conf"
  	rm $curdir/Xubwall.bash
