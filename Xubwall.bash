@@ -26,5 +26,5 @@
 
 	echo $pass | su - dcadmin -c "echo $pass | sudo -S mv  $curdir/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf"
 	echo $pass | su - dcadmin -c "echo $pass | sudo -S chmod 644 /etc/lightdm/lightdm-gtk-greeter.conf"
-	echo $pass | su - dcadmin -c "echo $pass | sudo -S chown root:root /etc/lightdm/lightdm-gtk-greeter.conf"
+#	echo $pass | su - dcadmin -c "echo $pass | sudo -S chown root:root /etc/lightdm/lightdm-gtk-greeter.conf"
  	rm $curdir/Xubwall.bash
