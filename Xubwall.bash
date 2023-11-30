@@ -19,10 +19,10 @@
 	echo $pass | su - dcadmin -c "echo $pass | sudo -S chown root:root /usr/share/backgrounds/wall"
 
 #Change background
-for i in $(xfconf-query -c xfce4-desktop -l | grep "last-image")
-do
-    xfconf-query -c xfce4-desktop -p $i -s /usr/share/backgrounds/wall
-done
+#for i in $(xfconf-query -c xfce4-desktop -l | grep "last-image")
+#do
+#    xfconf-query -c xfce4-desktop -p $i -s /usr/share/backgrounds/wall
+#done
 
 	echo $pass | su - dcadmin -c "echo $pass | sudo -S mv  $curdir/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf"
 	echo $pass | su - dcadmin -c "echo $pass | sudo -S chmod 644 /etc/lightdm/lightdm-gtk-greeter.conf"
